@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High 1-A+ (Sub-Boundless) Kratos - Ultimate Pantheon Hax Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #040406;
+            color: #d1d5db;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        .kratos-glow {
+            text-shadow: 0 0 25px rgba(239, 68, 68, 0.95), 0 0 50px rgba(6, 182, 212, 0.85), 0 0 75px rgba(168, 85, 247, 0.8);
+        }
+        .card-hover {
+            transition: all 0.25s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(239, 68, 68, 0.9);
+            box-shadow: 0 10px 30px -4px rgba(239, 68, 68, 0.6);
+        }
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ARKAPLAN SPARTA.MP3 SES OYNATICISI -->
+    <audio id="spartaAudio" loop>
+        <source src="sparta.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="content-layer max-w-7xl mx-auto space-y-8">
+        <!-- HEADER WITH LANGUAGE SELECTOR & AUDIO CONTROLS -->
+        <header class="relative text-center space-y-4 py-6 border-b border-gray-800">
+            <div class="absolute top-4 right-4 z-20 flex items-center gap-3">
+                <button onclick="toggleAudio()" id="audioBtn" class="bg-red-950/80 border border-red-600 text-red-300 text-xs rounded-lg px-3 py-1.5 font-bold hover:bg-red-900 transition flex items-center gap-1.5 cursor-pointer">
+                    <i class="fas fa-volume-mute" id="audioIcon"></i> <span id="audioText">Sparta Music: OFF</span>
+                </button>
+                <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-gray-800 border border-gray-700 text-white text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-red-500 font-bold cursor-pointer">
+                    <option value="en" selected>English (EN)</option>
+                    <option value="tr">Türkçe (TR)</option>
+                    <option value="ru">Русский (RU)</option>
+                    <option value="de">Deutsch (DE)</option>
+                </select>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-black tracking-wider text-white kratos-glow" data-i18n="mainTitle">
+                HIGH 1-A+ <span class="text-red-600">KRATOS</span> (SUB-BOUNDLESS)
+            </h1>
+            <p class="text-gray-400 text-sm md:text-base max-w-4xl mx-auto" data-i18n="mainSubtitle">
+                All Pantheon Hax Absorbed (Zeus, Hades, Poseidon, Hermes, Helios, Hercules, Athena, Sisters of Fate). Created with 48 Discord members & Jack.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-3 py-1 bg-red-950/90 border border-red-500 text-red-300 rounded-full text-xs font-bold">
+                    <i class="fas fa-crown"></i> <span data-i18n="tagTier">Tier: High 1-A+ (1 Step Below Boundless)</span>
+                </span>
+                <span class="px-3 py-1 bg-purple-950/90 border border-purple-500 text-purple-300 rounded-full text-xs font-bold">
+                    <i class="fas fa-skull"></i> <span data-i18n="tagAbsorb">Absorbed All Pantheon Hax & Relics</span>
+                </span>
+            </div>
+        </header>
+
+        <!-- KRATOS SHOWCASE CARD WITH FULL PANTHEON HAX & GODLY POSSESSIONS -->
+        <div class="bg-gray-900/90 border border-red-900/80 rounded-2xl p-6 backdrop-blur flex flex-col md:flex-row items-center gap-6 shadow-2xl">
+            <div class="w-full md:w-1/3 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-red-600 via-purple-600 to-cyan-400 rounded-2xl blur opacity-80 group-hover:opacity-100 transition duration-1000"></div>
+                    <img src="gow1.jpg" alt="High 1-A+ Kratos" class="relative rounded-xl object-cover w-64 h-64 border-2 border-red-500/70 shadow-2xl">
+                </div>
+            </div>
+
+            <div class="w-full md:w-2/3 space-y-4">
+                <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                    <h2 class="text-2xl font-black text-white" data-i18n="cardTitle">KRATOS (Omni-Pantheon Hax Absorbed)</h2>
+                    <span class="px-3 py-1 bg-red-900/70 border border-red-500 text-red-300 text-xs font-bold rounded-lg" data-i18n="cardBadge">SUB-BOUNDLESS BOUNDARY</span>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+                    <div class="bg-gray-800/60 p-2.5 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 font-bold" data-i18n="stat1Title">Saf Kas Gücü</div>
+                        <div class="text-red-400 font-black text-sm" data-i18n="stat1Val">12+ Quadrillion Tons[cite: 4]</div>
+                    </div>
+                    <div class="bg-gray-800/60 p-2.5 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 font-bold" data-i18n="stat2Title">Hız Ölçeği</div>
+                        <div class="text-cyan-400 font-black text-sm" data-i18n="stat2Val">Immeasurable Speed[cite: 4, 5]</div>
+                    </div>
+                    <div class="bg-gray-800/60 p-2.5 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 font-bold" data-i18n="stat3Title">Causality / Acausality</div>
+                        <div class="text-yellow-400 font-black text-sm" data-i18n="stat3Val">Type 5 / Sisters of Fate Slain[cite: 4, 5]</div>
+                    </div>
+                    <div class="bg-gray-800/60 p-2.5 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 font-bold" data-i18n="stat4Title">Kavramsal Silah</div>
+                        <div class="text-purple-400 font-black text-sm" data-i18n="stat4Val">Blade of Olympus Sealing[cite: 4]</div>
+                    </div>
+                    <div class="bg-gray-800/60 p-2.5 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 font-bold" data-i18n="stat5Title">4th Wall Status</div>
+                        <div class="text-emerald-400 font-black text-sm" data-i18n="stat5Val">Broken in GoW 3 Final[cite: 5]</div>
+                    </div>
+                    <div class="bg-gray-800/60 p-2.5 rounded-lg border border-gray-700">
+                        <div class="text-gray-400 font-bold" data-i18n="stat6Title">Hax Immunity</div>
+                        <div class="text-amber-400 font-black text-sm" data-i18n="stat6Val">%100 Absolute Nullification[cite: 4]</div>
+                    </div>
+                </div>
+
+                <!-- ALL PANTHEON HAX & GODLY POSSESSIONS ENVENTORY ROW -->
+                <div class="pt-2 border-t border-gray-800 space-y-1.5">
+                    <div class="text-[11px] font-bold text-red-400 flex items-center gap-1.5">
+                        <i class="fas fa-fire-flame-curved"></i> <span data-i18n="gpHeader">All Pantheon Boss Hax & Godly Possessions Absorbed:</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 text-[10px]">
+                        <span class="px-2 py-0.5 bg-red-950/80 border border-red-700/60 text-red-300 rounded font-semibold">Zeus's Lightning & Authority</span>
+                        <span class="px-2 py-0.5 bg-blue-950/80 border border-blue-700/60 text-blue-300 rounded font-semibold">Poseidon's Hydro-Surge</span>
+                        <span class="px-2 py-0.5 bg-purple-950/80 border border-purple-700/60 text-purple-300 rounded font-semibold">Hades's Soul Steal & Helm</span>
+                        <span class="px-2 py-0.5 bg-amber-950/80 border border-amber-700/60 text-amber-300 rounded font-semibold">Hercules's Nemean Cestus Force</span>
+                        <span class="px-2 py-0.5 bg-yellow-950/80 border border-yellow-700/60 text-yellow-300 rounded font-semibold">Helios's Head Concept Blinding</span>
+                        <span class="px-2 py-0.5 bg-emerald-950/80 border border-emerald-700/60 text-emerald-300 rounded font-semibold">Hermes's Speed & Boots</span>
+                        <span class="px-2 py-0.5 bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 rounded font-semibold">Sisters of Fate Time Manipulation</span>
+                        <span class="px-2 py-0.5 bg-cyan-950/80 border border-cyan-700/60 text-cyan-300 rounded font-semibold">Athena's Higher Astral Wisdom</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH & SIMULATOR SECTION -->
+        <div class="bg-gray-900/90 border border-gray-800 rounded-2xl p-6 space-y-6 backdrop-blur">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="w-full md:w-1/3 relative">
+                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search GoW Pantheon & Anime Characters..." 
+                           class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-xl text-sm text-white focus:outline-none focus:border-red-500" data-i18n-placeholder="searchPlaceholder">
+                    <i class="fas fa-search absolute right-3 top-3 text-gray-500"></i>
+                </div>
+                
+                <div class="flex flex-wrap gap-2" id="filterContainer"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4" id="cardsGrid"></div>
+        </div>
+
+        <!-- HIGH 1-A+ CANON & GUIDE -->
+        <div class="bg-gray-900/95 border border-red-900/70 rounded-2xl p-6 backdrop-blur space-y-6 shadow-xl">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                <h2 class="text-2xl font-black text-white flex items-center gap-3">
+                    <i class="fas fa-gavel text-red-500"></i> <span data-i18n="guideTitle">PANTHEON HAX ABSORPTION & WIKI LORE GUIDE</span>
+                </h2>
+                <button onclick="toggleGuide()" id="toggleGuideBtn" class="px-3 py-1 bg-red-900/40 border border-red-500/40 text-red-300 text-xs rounded-lg font-bold" data-i18n="guideToggle">
+                    Hide / Show
+                </button>
+            </div>
+
+            <div id="guideContent" class="space-y-6 text-sm text-gray-300">
+                <!-- GOW2.JPG KARE GÖRSEL KUTUSU -->
+                <div class="flex flex-col md:flex-row items-center gap-6 bg-black/40 p-4 rounded-xl border border-red-900/50">
+                    <div class="relative group w-full md:w-72 flex justify-center shrink-0">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-red-600 via-purple-600 to-cyan-400 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                        <img src="gow2.jpg" alt="Yggdrasil Kozmoloji Ölçeği" 
+                             class="relative rounded-xl object-cover w-64 h-64 border-2 border-red-500/70 shadow-2xl bg-gray-900">
+                    </div>
+                    <div class="space-y-3">
+                        <h4 class="text-lg font-bold text-red-400" data-i18n="boxHeader">Yggdrasil & Kozmoloji Ölçeği (Kanıt Görseli)</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="boxDesc">
+                            Yandaki şemada açıkça görüldüğü gibi, Yggdrasil Dünya Ağacı dokuz ayrı makrokozmik diyarı ve sonsuz uzay-zaman sürekliliklerini birbirine bağlar[cite: 6].
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 48 KİŞİLİK DİSCORD TOPLULUĞU VE JACK'İN ORTAK NOTU -->
+                <div class="p-4 bg-indigo-950/40 border border-indigo-600/60 rounded-lg space-y-3 text-indigo-200 text-xs font-medium">
+                    <div class="flex items-center gap-2 font-bold text-indigo-400 text-sm">
+                        <i class="fas fa-users-viewfinder"></i> <span data-i18n="discordNoteTitle">Discord Community & Co-creator Note (48 Members Collaborative Effort):</span>
+                    </div>
+                    <p class="leading-relaxed" data-i18n="discordNoteDesc">
+                        Bu simülatördeki tüm wiki taramaları, God of War düşman hax'leri (Zeus, Hades, Hercules vb.) ve tanrısal yetenekler Discord sunucumuzda 48 kişinin ortak katılımıyla Kratos'un envanterine işlenmiştir.
+                    </p>
+                    <div class="border-t border-indigo-800/60 pt-2 italic text-amber-300 font-semibold" data-i18n="jackQuote">
+                        "Ben bir Sun Wukong fanı olarak diyorum ki; Kratos sadece kendi gücüyle değil, tüm evrendeki tanrıların ve düşmanların hax yeteneklerini (Hades'in ruh sökme, Hermes'in hız çalma, Sisters of Fate zaman bükme hax'leri dahil) tek başına absorbe ettiği için karşısında kimse duramaz!" — Jack (Co-creator & Sun Wukong Fan)
+                    </div>
+                </div>
+
+                <div class="p-3 bg-red-950/40 border border-red-600/50 rounded-lg flex items-center gap-3 text-red-300 font-bold text-xs">
+                    <i class="fas fa-check-circle text-red-500 text-base"></i>
+                    <span data-i18n="canonNotice">KESİNLEŞMİŞ CANON: Aşağıdaki tüm maddeler resmi oyun içi wiki verileri, patron yetenekleri ve Cory Barlog açıklamalarıyla desteklenmektedir[cite: 4, 5]!</span>
+                </div>
+
+                <div class="space-y-2 border-l-2 border-red-500 pl-4">
+                    <h3 class="text-lg font-bold text-red-400" data-i18n="g1Title">1. Cory Barlog Verisi (12+ Quadrillion Ton Kas Gücü)</h3>
+                    <p class="leading-relaxed" data-i18n="g1Desc">
+                        Yönetmen Cory Barlog'un resmi açıklamalarına göre Kratos'un saf kas gücünün sınırı yoktur[cite: 4, 5].
+                    </p>
+                </div>
+
+                <div class="space-y-2 border-l-2 border-cyan-500 pl-4">
+                    <h3 class="text-lg font-bold text-cyan-400" data-i18n="g2Title">2. Absorbe Edilen Tüm Tanrısal Hax'ler (Zeus, Hades, Hercules vs.)</h3>
+                    <p class="leading-relaxed" data-i18n="g2Desc">
+                        Kratos seride yendiği her tanrının ve patronun hax yeteneğini ele geçirmiştir: **Zeus'un yıldırım otoritesi**, **Hades'in ruh sökme gücü**, **Poseidon'un deniz dalgası kontrolü**, **Hercules'in Nemean darbe gücü**, **Helios'un kör edici ışığı**, **Hermes'in hız çalma yeteneği** ve **Sisters of Fate'in zaman bükme hakimiyeti** doğrudan Godly Possessions envanterine işlenmiştir[cite: 4, 5].
+                    </p>
+                </div>
+
+                <div class="space-y-2 border-l-2 border-purple-500 pl-4">
+                    <h3 class="text-lg font-bold text-cyan-400" data-i18n="g3Title">3. Claws of Hades ve Blade of Olympus</h3>
+                    <p class="leading-relaxed" data-i18n="g3Desc">
+                        Sisters of Fate katledilerek Acausality Type 5 kazanılmış, Claws of Hades ile rakibin özü sökülürken Blade of Olympus ile evrensel konseptler mühürlenmektedir[cite: 4, 5].
+                    </p>
+                </div>
+
+                <div class="space-y-2 border-l-2 border-amber-500 pl-4">
+                    <h3 class="text-lg font-bold text-amber-400" data-i18n="g4Title">4. Nihai Sonuç (Omni-Pantheon Supremacy)</h3>
+                    <p class="leading-relaxed" data-i18n="g4Desc">
+                        Rakip kim olursa olsun (ister anime evrenlerinden bir tanrı, ister kendi evrenindeki Zeus veya Hercules), Kratos tüm bu düşmanların hax yeteneklerini kendi pasiflerine eklediği için mutlak üstünlükle (Low/Neg Diff) kazanır[cite: 4, 5].
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MATCH LOG MODAL -->
+    <div id="logModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+        <div class="bg-gray-900 border border-red-500/50 rounded-2xl p-6 max-w-2xl w-full space-y-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+                <h3 id="modalTitle" class="text-xl font-bold text-white"></h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white text-xl"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div id="modalDiff" class="text-sm font-bold"></div>
+            <div id="modalLogs" class="space-y-3 text-sm text-gray-300"></div>
+            <button onclick="closeModal()" class="w-full py-2 bg-red-900/60 hover:bg-red-800 text-white rounded-lg font-bold" data-i18n="closeBtn">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let isAudioPlaying = false;
+        function toggleAudio() {
+            const audio = document.getElementById('spartaAudio');
+            const icon = document.getElementById('audioIcon');
+            const text = document.getElementById('audioText');
+            
+            if (isAudioPlaying) {
+                audio.pause();
+                isAudioPlaying = false;
+                icon.className = "fas fa-volume-mute";
+                text.innerText = "Sparta Music: OFF";
+            } else {
+                audio.play().catch(e => console.log("Audio play blocked by browser policy:", e));
+                isAudioPlaying = true;
+                icon.className = "fas fa-volume-up";
+                text.innerText = "Sparta Music: ON";
+            }
+        }
+
+        const translations = {
+            en: {
+                mainTitle: 'HIGH 1-A+ <span class="text-red-600">KRATOS</span> (SUB-BOUNDLESS)',
+                mainSubtitle: 'All Pantheon Hax Absorbed (Zeus, Hades, Poseidon, Hermes, Helios, Hercules, Athena, Sisters of Fate). Created with 48 Discord members & Jack.',
+                tagTier: 'Tier: High 1-A+ (1 Step Below Boundless)',
+                tagAbsorb: 'Absorbed All Pantheon Hax & Relics',
+                cardTitle: 'KRATOS (Omni-Pantheon Hax Absorbed)',
+                cardBadge: 'SUB-BOUNDLESS BOUNDARY',
+                stat1Title: 'Lifting Power',
+                stat1Val: '12+ Quadrillion Tons[cite: 4]',
+                stat2Title: 'Speed Scale',
+                stat2Val: 'Immeasurable Speed[cite: 4, 5]',
+                stat3Title: 'Causality / Acausality',
+                stat3Val: 'Type 5 / Sisters of Fate Slain[cite: 4, 5]',
+                stat4Title: 'Conceptual Weapon',
+                stat4Val: 'Blade of Olympus Sealing[cite: 4]',
+                stat5Title: '4th Wall Status',
+                stat5Val: 'Broken in GoW 3 Final[cite: 5]',
+                stat6Title: 'Hax Immunity',
+                stat6Val: '%100 Absolute Nullification[cite: 4]',
+                gpHeader: 'All Pantheon Boss Hax & Godly Possessions Absorbed:',
+                searchPlaceholder: 'Search GoW Pantheon & Anime Characters...',
+                allFilter: 'ALL',
+                guideTitle: 'PANTHEON HAX ABSORPTION & WIKI LORE GUIDE',
+                guideToggle: 'Hide / Show',
+                boxHeader: 'Yggdrasil & Cosmology Scale (Proof Visual)',
+                boxDesc: 'As seen in the adjacent schema, the Yggdrasil World Tree binds nine distinct macrocosmic realms and infinite space-time continuums[cite: 6].',
+                discordNoteTitle: 'Discord Community & Co-creator Note (48 Members Collaborative Effort):',
+                discordNoteDesc: 'All wiki scans, GoW boss hax (Zeus, Hades, Hercules, etc.) were formulated and integrated into Kratos\'s inventory collaboratively by 48 members on Discord.',
+                jackQuote: '"As a die-hard Sun Wukong fan myself, even I have to admit: since Kratos absorbed the hax abilities of all defeated gods and bosses, nobody can bypass his ultimate toolkit!" — Jack (Co-creator & Sun Wukong Fan)',
+                canonNotice: 'CONFIRMED CANON: All scaling and absorbed boss hax are strictly backed by official GoW wiki lore and developer statements[cite: 4, 5].',
+                g1Title: '1. Cory Barlog Statement (12+ Quadrillion Tons)',
+                g1Desc: 'Director Cory Barlog explicitly confirmed that Kratos\'s raw muscle strength is limitless[cite: 4, 5].',
+                g2Title: '2. All Defeated Pantheon Boss Hax Absorbed',
+                g2Desc: 'Kratos holds the complete hax set of the Greek Pantheon: Zeus\'s lightning, Hades\'s soul rip, Poseidon\'s hydrokinesis, Hercules\'s Nemean force, Helios\'s blinding light, Hermes\'s speed, and Sisters of Fate time control[cite: 4, 5].',
+                g3Title: '3. Claws of Hades & Blade of Olympus',
+                g3Desc: 'By slaughtering the Sisters of Fate, Kratos gained Acausality Type 5[cite: 4, 5].',
+                g4Title: '4. Omni-Pantheon Supremacy',
+                g4Desc: 'Absorbing the exact hax of every boss he fought makes Kratos completely unstoppable against any opponent in fiction[cite: 4, 5].',
+                btnLog: 'Read Combat Log',
+                closeBtn: 'Close',
+                resHeader: 'HIGH 1-A+ SUB-BOUNDLESS KRATOS ABSOLUTE VICTORY'
+            },
+            tr: {
+                mainTitle: 'HIGH 1-A+ <span class="text-red-600">KRATOS</span> (SUB-BOUNDLESS)',
+                mainSubtitle: 'Tüm Tanrıların ve Düşmanların Hax\'leri Absorbe Edildi (Zeus, Hades, Hercules, Sisters of Fate vb.). 48 Discord üyesi ve Jack ile geliştirildi.',
+                tagTier: 'Tier: High 1-A+ (Boundless\'ın 1 Altı)',
+                tagAbsorb: 'Tüm Tanrısal Patronların Hax\'leri Absorbe Edildi',
+                cardTitle: 'KRATOS (Omni-Pantheon Hax Absorbed)',
+                cardBadge: 'SUB-BOUNDLESS BOUNDARY',
+                stat1Title: 'Saf Kas Gücü',
+                stat1Val: '12+ Quadrillion Tons[cite: 4]',
+                stat2Title: 'Hız Ölçeği',
+                stat2Val: 'Immeasurable (Ölçülemez)[cite: 4, 5]',
+                stat3Title: 'Nedensellik / Acausality',
+                stat3Val: 'Type 5 / Sisters of Fate Katledildi[cite: 4, 5]',
+                stat4Title: 'Kavramsal Silah',
+                stat4Val: 'Blade of Olympus Mühürleme[cite: 4]',
+                stat5Title: '4. Duvar Status',
+                stat5Val: 'GoW 3 Finalinde Kırıldı[cite: 5]',
+                stat6Title: 'Hax Bağışıklığı',
+                stat6Val: '%100 Mutlak Nötrleme[cite: 4]',
+                gpHeader: 'Tüm Tanrısal Patron Hax\'leri ve Eşyaları Absorbe Edildi:',
+                searchPlaceholder: 'God of War Patronları ve Anime Karakterleri Ara (Zeus, Hades, Hercules...)',
+                allFilter: 'HEPSİ',
+                guideTitle: 'PANTHEON HAX ABSORBRISİ VE WİKA LORE REHBERİ',
+                guideToggle: 'Gizle / Göster',
+                boxHeader: 'Yggdrasil & Kozmoloji Ölçeği (Kanıt Görseli)',
+                boxDesc: 'Yandaki şemada açıkça görüldüğü gibi, Yggdrasil Dünya Ağacı dokuz ayrı makrokozmik diyarı birbirine bağlar[cite: 6].',
+                discordNoteTitle: 'Discord Topluluğu & Ortak Geliştirici Notu (48 Kişilik Ortak Çalışma):',
+                discordNoteDesc: 'Wiki verilerindeki tüm patron hax\'leri (Zeus\'un otoritesi, Hades\'in ruh sökmesi, Hercules\'in darbe gücü vb.) Discord sunucumuzda 48 kişinin ortak kararıyla Kratos\'un Godly Possessions envanterine işlenmiştir.',
+                jackQuote: '"Ben bir Sun Wukong fanı olarak diyorum ki; Kratos yenip geçtiği tüm tanrıların ve patronların özel hax yeteneklerini kendi envanterine absorbe ettiği için kimse onun karşısında tutunamaz!" — Jack (Co-creator & Sun Wukong Fan)',
+                canonNotice: 'DOĞRULANMIŞ CANON: Tüm bu hax transferleri resmi wiki verileri, oyun içi patron mekanikleri ve Cory Barlog açıklamalarıyla birebir desteklenmektedir[cite: 4, 5].',
+                g1Title: '1. Cory Barlog Verisi (12+ Quadrillion Ton Kas Gücü)',
+                g1Desc: 'Kratos\'un saf kas gücünün sınırı yoktur[cite: 4, 5].',
+                g2Title: '2. Tüm Yenilen Patronların Hax\'leri Envanterde (Zeus, Hades, Hercules vb.)',
+                g2Desc: 'Kratos sadece fiziksel olarak değil; Zeus\'un yıldırım otoritesini, Hades\'in ruh sökme hax\'ini, Poseidon\'un su kontrolünü, Hercules\'in Nemean gücünü, Helios\'un kör edici ışığını, Hermes\'in hız çalma yeteneğini ve Sisters of Fate\'in zaman bükme gücünü doğrudan Godly Possessions olarak absorbe etmiştir[cite: 4, 5].',
+                g3Title: '3. Claws of Hades ve Blade of Olympus',
+                g3Desc: 'Sisters of Fate katledilerek Acausality Type 5 kazanılmış, evrensel mühürleme gücü aktif edilmiştir[cite: 4, 5].',
+                g4Title: '4. Omni-Pantheon Üstünlüğü',
+                g4Desc: 'Evrendeki tüm düşmanların ve ilahi varlıkların en güçlü hax yeteneklerini elinde tutan Kratos, kurgusal katsayıda mutlak galiptir[cite: 4, 5].',
+                btnLog: 'Dövüş Logunu Oku',
+                closeBtn: 'Kapat',
+                resHeader: 'HIGH 1-A+ SUB-BOUNDLESS KRATOS MUTLAK ZAFERİ'
+            },
+            ru: {
+                mainTitle: 'HIGH 1-A+ <span class="text-red-600">КРАТОС</span> (SUB-BOUNDLESS)',
+                mainSubtitle: 'Все хаксы богов поглощены (Зевс, Аид, Геркулес и др.). Создано с 48 участниками Discord.',
+                tagTier: 'Уровень: High 1-A+ (на 1 шаг ниже Boundless)',
+                tagAbsorb: 'Поглощены все хаксы богов GoW',
+                cardTitle: 'КРАТОС (Omni-Pantheon Hax Absorbed)',
+                cardBadge: 'ГРАНИЦА SUB-BOUNDLESS',
+                stat1Title: 'Сила мышц',
+                stat1Val: '12+ квадриллионов тонн[cite: 4]',
+                stat2Title: 'Скорость',
+                stat2Val: 'Immeasurable Speed[cite: 4, 5]',
+                stat3Title: 'Причинность',
+                stat3Val: 'Тип 5 / Судьбы повержены[cite: 4, 5]',
+                stat4Title: 'Оружие',
+                stat4Val: 'Blade of Olympus Sealing[cite: 4]',
+                stat5Title: '4-я стена',
+                stat5Val: 'Разрушена в GoW 3[cite: 5]',
+                stat6Title: 'Иммунитет',
+                stat6Val: '%100 Абсолютная нейтрализация[cite: 4]',
+                gpHeader: 'Поглощенные хаксы богов и реликвии:',
+                searchPlaceholder: 'Поиск богов GoW и персонажей...',
+                allFilter: 'ВСЕ',
+                guideTitle: 'ПОГЛОЩЕНИЕ ХАКСОВ И ЛОР WIKI',
+                guideToggle: 'Скрыть / Показать',
+                boxHeader: 'Игдрасиль и Космология',
+                boxDesc: 'Игдрасиль соединяет девять миров[cite: 6].',
+                discordNoteTitle: 'Сообщество Discord (48 участников):',
+                discordNoteDesc: 'Все хаксы богов (Зевс, Аид, Геркулес) добавлены в инвентарь Кратоса совместным решением 48 участников в Discord.',
+                jackQuote: '"Кратос поглотил способности всех богов, против него нет шансов!" — Джек',
+                canonNotice: 'ПОДТВЕРЖДЕННЫЙ КАНОН[cite: 4, 5].',
+                g1Title: '1. Данные Кори Барлога',
+                g1Desc: 'Сила Кратоса безгранична[cite: 4, 5].',
+                g2Title: '2. Поглощенные хаксы богов GoW',
+                g2Desc: 'Молнии Зевса, похищение душ Аида, сила Геркулеса и управление временем Судеб теперь в арсенале Кратоса[cite: 4, 5].',
+                g3Title: '3. Когти Аида и Клинок Олимпа',
+                g3Desc: 'Акаузальность Тип 5[cite: 4, 5].',
+                g4Title: '4. Абсолютное превосходство',
+                g4Desc: 'Ни один противник в фэнтези не переживет арсенал всех богов сразу[cite: 4, 5].',
+                btnLog: 'Читать лог боя',
+                closeBtn: 'Закрыть',
+                resHeader: 'ПОБЕДА КРАТОСА'
+            },
+            de: {
+                mainTitle: 'HIGH 1-A+ <span class="text-red-600">KRATOS</span> (SUB-BOUNDLESS)',
+                mainSubtitle: 'Alle Götter-Hax absorbiert (Zeus, Hades, Herkules usw.). Erstellt mit 48 Discord-Mitgliedern.',
+                tagTier: 'Stufe: High 1-A+ (1 Schritt unter Boundless)',
+                tagAbsorb: 'Alle GoW Boss-Hax absorbiert',
+                cardTitle: 'KRATOS (Omni-Pantheon Hax Absorbed)',
+                cardBadge: 'SUB-BOUNDLESS GRENZE',
+                stat1Title: 'Muskelkraft',
+                stat1Val: '12+ Quadrillionen Tonnen[cite: 4]',
+                stat2Title: 'Geschwindigkeit',
+                stat2Val: 'Immeasurable Speed[cite: 4, 5]',
+                stat3Title: 'Kausalität',
+                stat3Val: 'Typ 5 / Schicksalsschwestern besiegt[cite: 4, 5]',
+                stat4Title: 'Waffe',
+                stat4Val: 'Blade of Olympus Sealing[cite: 4]',
+                stat5Title: '4. Wand',
+                stat5Val: 'In GoW 3 Finale gebrochen[cite: 5]',
+                stat6Title: 'Immunität',
+                stat6Val: '%100 Absolute Nullifizierung[cite: 4]',
+                gpHeader: 'Absorbierte Boss-Hax & Relikte:',
+                searchPlaceholder: 'Suche GoW Götter & Charaktere...',
+                allFilter: 'ALLE',
+                guideTitle: 'HAX ABSORPTION & WIKI LORE LEITFADEN',
+                guideToggle: 'Verstecken / Anzeigen',
+                boxHeader: 'Yggdrasil & Kosmologie',
+                boxDesc: 'Yggdrasil verbindet neun Welten[cite: 6].',
+                discordNoteTitle: 'Discord Community (48 Mitglieder):',
+                discordNoteDesc: 'Die Hax-Fähigkeiten aller Bosse wurden gemeinschaftlich in Kratos\' Inventar integriert.',
+                jackQuote: '"Kratos hat die Fähigkeiten aller Götter absorbiert, niemand kann ihn stoppen!" — Jack',
+                canonNotice: 'BESTÄTIGTER KANON[cite: 4, 5].',
+                g1Title: '1. Cory Barlog Zitat',
+                g1Desc: 'Kraft ohne Grenzen[cite: 4, 5].',
+                g2Title: '2. Alle Boss-Hax absorbiert (Zeus, Hades, Herkules)',
+                g2Desc: 'Kratos besitzt nun die Fähigkeiten aller gefallenen Götter als Godly Possessions[cite: 4, 5].',
+                g3Title: '3. Klauen des Hades',
+                g3Desc: 'Acausality Type 5[cite: 4, 5].',
+                g4Title: '4. Absolute Vorherrschaft',
+                g4Desc: 'Unschlagbar durch das kombinierte Arsenal aller Götter[cite: 4, 5].',
+                btnLog: 'Kampflog lesen',
+                closeBtn: 'Schließen',
+                resHeader: 'HIGH 1-A+ KRATOS ABSOLUTER SIEG'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.innerHTML = t[key];
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (t[key]) el.placeholder = t[key];
+            });
+
+            const audioText = document.getElementById('audioText');
+            if(isAudioPlaying) {
+                audioText.innerText = (lang === 'tr') ? "Sparta Müziği: AÇIK" : "Sparta Music: ON";
+            } else {
+                audioText.innerText = (lang === 'tr') ? "Sparta Müziği: KAPALI" : "Sparta Music: OFF";
+            }
+
+            renderFilters();
+            renderCards();
+        }
+
+        const baseArchetypes = [
+            { uni: "GoW Pantheon & Bosses", names: ["Zeus (GoW 3 Peak - Lightning Hax)", "Hades (Soul Rip Hax)", "Poseidon (Hydro-Surge Hax)", "Hercules (Nemean Cestus Force)", "Ares (God of War Authority)", "Hermes (Speed Steal Hax)", "Helios (Concept Blinding Head)", "Athena (Higher Astral Wisdom)", "Sisters of Fate (Time Loom Hax)", "Kronos (Titan King)", "Gaia (Mother Earth)", "Baldur (Norse God)", "Thor (God of Thunder)", "Odin (Allfather)"] },
+            { uni: "Dragon Ball", names: ["Goku SSG", "Beerus", "Whis", "Zeno", "Vegeta UE", "Broly FP", "Gohan Beast", "Jiren", "Gogeta Blue", "Moro", "Grand Priest", "Frieza Black"] },
+            { uni: "High School DxD", names: ["Issei Hyoudou (LN AxA)", "Vali Lucifer (Diabolos)", "Great Red", "Ophis", "Trihexa (666)", "Sirzechs Lucifer", "Ajuka Beelzebub", "Cao Cao"] },
+            { uni: "Omniverse Gods", names: ["Anos Voldigoad", "Featherine Augustus", "Rimuru Tempest (LN)", "Wang Ling", "Cosmic Armor Superman", "Anti-Spiral", "Simon the Digger", "Gilgamesh (CCC)", "Hajun", "Lucifer Morningstar"] },
+            { uni: "JoJo's Bizarre", names: ["Giorno Giovanna (GER)", "DIO (Heaven Attained)", "Jotaro Kujo", "Funny Valentine (D4C)", "Enrico Pucci (Made in Heaven)", "Tooru (Wonder of U)"] },
+            { uni: "7 Deadly Sins", names: ["Meliodas (Demon King)", "Escanor (The One Ultimate)", "Arthur Pendragon (Chaos)", "Zeldris", "Mael"] },
+            { uni: "Big 3 & Anime", names: ["Madara Uchiha", "Sousuke Aizen", "Gear 5 Luffy", "Naruto (Baryon)", "Ichigo (True Bankai)", "Gojo Satoru", "Ryomen Sukuna", "Saitama", "Sun Wukong"] },
+            { uni: "Comics & Games", names: ["Batman (Prep Time)", "Superman (Prime)", "Dr. Manhattan", "Doom Slayer", "Asura", "Dante", "Vergil"] }
+        ];
+
+        let characterData = [];
+        let idCounter = 1;
+
+        baseArchetypes.forEach(group => {
+            group.names.forEach(name => {
+                let diff = "LOW DIFF";
+                let diffColor = "text-green-400";
+                
+                if (["Meliodas", "Saitama", "Madara", "Aizen", "Gojo", "Batman", "Jotaro Kujo", "Zeus (GoW 3 Peak", "Hercules"].some(n => name.includes(n))) {
+                    diff = "NEG DIFF";
+                    diffColor = "text-emerald-400";
+                }
+
+                characterData.push({
+                    id: `char_${idCounter++}`,
+                    name: name,
+                    uni: group.uni,
+                    diff: diff,
+                    diffColor: diffColor,
+                    logs: [
+                        `STEP 1 (Discord Community Scale): ${name} attempts their signature hax, but Kratos utilizes the absorbed boss abilities (Zeus's lightning, Hades's soul rip, Hermes's speed steal) to instantly counter[cite: 4, 5].`,
+                        `STEP 2 (Absorbed Pantheon Hax): Godly Possessions loaded with all defeated deities' powers completely nullify ${name}'s defenses[cite: 4, 5].`,
+                        `STEP 3 (Acausality Type 5): Sisters of Fate slain, rendering temporal and fate-manipulation hax completely useless[cite: 4, 5].`,
+                        `STEP 4 (Blade of Olympus Sealing): Abstract conceptual sealing neutralizes ${name}'s core essence instantly[cite: 4].`,
+                        `RESULT: Negative/Low Diff absolute victory against ${name}[cite: 4, 5].`
+                    ]
+                });
+            });
+        });
+
+        const universes = ["ALL", ...new Set(characterData.map(c => c.uni))];
+        let currentFilter = "ALL";
+
+        function renderFilters() {
+            const container = document.getElementById("filterContainer");
+            const t = translations[currentLang];
+            container.innerHTML = universes.map(u => {
+                const displayName = (u === "ALL") ? t.allFilter : u;
+                return `<button onclick="setFilter('${u}')" class="px-3 py-1 text-xs rounded-lg border transition ${
+                    currentFilter === u ? 'bg-red-900 border-red-500 text-white font-bold' : 'bg-gray-800/60 border-gray-700 text-gray-400 hover:text-white'
+                }">${displayName}</button>`;
+            }).join("");
+        }
+
+        function setFilter(filter) {
+            currentFilter = filter;
+            renderFilters();
+            renderCards();
+        }
+
+        function handleSearch() { renderCards(); }
+
+        function renderCards() {
+            const grid = document.getElementById("cardsGrid");
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            let filtered = currentFilter === "ALL" ? characterData : characterData.filter(c => c.uni === currentFilter);
+            if (query) filtered = filtered.filter(c => c.name.toLowerCase().includes(query) || c.uni.toLowerCase().includes(query));
+
+            const t = translations[currentLang];
+
+            grid.innerHTML = filtered.map(c => `
+                <div class="bg-gray-800/40 border border-gray-700/60 rounded-xl p-3 card-hover flex flex-col justify-between space-y-2">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] font-semibold text-gray-400">${c.uni}</span>
+                            <span class="text-[10px] font-black ${c.diffColor} bg-black/40 px-1.5 py-0.5 rounded border border-current">${c.diff}</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mt-1 truncate">${c.name}</h3>
+                    </div>
+                    <button onclick="openModal('${c.id}')" class="w-full py-1.5 bg-red-900/40 hover:bg-red-800/60 border border-red-500/40 rounded text-xs font-bold text-red-200 transition">
+                        ${t.btnLog}
+                    </button>
+                </div>
+            `).join("");
+        }
+
+        function openModal(id) {
+            const char = characterData.find(c => c.id === id);
+            if (!char) return;
+            const t = translations[currentLang];
+            document.getElementById("modalTitle").innerText = `Kratos (High 1-A+) vs ${char.name}`;
+            document.getElementById("modalDiff").className = `text-sm font-bold ${char.diffColor}`;
+            document.getElementById("modalDiff").innerText = `RESULT: ${char.diff} (${t.resHeader})`;
+            document.getElementById("modalLogs").innerHTML = char.logs.map(log => `<div class="p-2 bg-gray-800/50 rounded border border-gray-700/50">${log}</div>`).join("");
+            document.getElementById("logModal").classList.remove("hidden");
+        }
+
+        function closeModal() { document.getElementById("logModal").classList.add("hidden"); }
+
+        function toggleGuide() {
+            const content = document.getElementById("guideContent");
+            content.classList.toggle("hidden");
+        }
+
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + 10;
+                this.size = Math.random() * 2 + 1;
+                this.speedY = Math.random() * 1.2 + 0.4;
+                this.color = Math.random() > 0.5 ? 'rgba(239, 68, 68, 0.3)' : (Math.random() > 0.5 ? 'rgba(6, 182, 212, 0.3)' : 'rgba(168, 85, 247, 0.3)');
+            }
+            update() { this.y -= this.speedY; if (this.y < -10) this.reset(); }
+            draw() { ctx.fillStyle = this.color; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
+        }
+
+        function initParticles() {
+            resizeCanvas();
+            particles = Array.from({ length: 35 }, () => new Particle());
+            animate();
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        window.onload = () => { 
+            changeLanguage('en'); 
+            initParticles(); 
+        };
+    </script>
+</body>
+</html>
